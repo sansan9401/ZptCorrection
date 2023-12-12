@@ -82,7 +82,7 @@ double ZptCorrection::GetZptWeight(double pt,double rapidity) const {
   double sf=GetZptWeight(pt);
 
   if(!fZptWeightY.size()) return sf;
-  if(isnan(rapidity)) return sf;
+  if(std::isnan(rapidity)) return sf;
   double y=fabs(rapidity);
   if(y>=fZptWeightYaxis->GetXmax()) y=fZptWeightYaxis->GetXmax()-1e-6;  
 
